@@ -1,0 +1,10 @@
+.vscode
+build
+generated
+node_modules
+subgraph.yaml
+subgraph.goerli.yaml
+subgraph.localhost.yaml
+subgraph.bsc_testnet.yaml
+# Docker-compose valumes
+data/

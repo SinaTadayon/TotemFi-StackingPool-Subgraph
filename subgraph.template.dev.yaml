@@ -1,0 +1,70 @@
+specVersion: 0.0.2
+description: Totem Explorer
+repository: "https://github.com/totemfi/totem-subgraph"
+schema:
+    file: ./schemaV6.graphql
+dataSources:
+    - kind: ethereum/contract
+      name: StakingPoolFactoryV8
+      network: mainnet
+      source:
+          address: StakingPoolFactoryV8
+          abi: StakingPoolFactoryV8
+          startBlock:
+      mapping:
+          kind: ethereum/events
+          apiVersion: 0.0.5
+          language: wasm/assemblyscript
+          entities:
+              - Summary
+              - StakingPool
+              - User
+          abis:
+              - name: StakingPoolFactoryV8
+                file:
+          eventHandlers:
+              - event: "PoolCreated(indexed address,string,string,uint256[12],uint256[8],uint256[8],bool)"
+                handler: handlePoolCreation
+          file: ./src/poolv7.ts
+templates:
+    - kind: ethereum/contract
+      name: StakingPoolV9
+      network: mainnet
+      source:
+          abi: StakingPoolV9
+      mapping:
+          kind: ethereum/events
+          apiVersion: 0.0.5
+          language: wasm/assemblyscript
+          entities:
+              - StakingPool
+              - User
+              - Stake
+              - Withdraw
+          abis:
+              - name: StakingPoolV9
+                file:
+          eventHandlers:
+              - event: "BatchStake(indexed address,uint256[],uint256[],uint256,uint256)"
+                handler: handleBatchStake
+              - event: "Stake(indexed address,uint256,uint256,uint256)"
+                handler: handleStake
+              - event: "WithdrawStakingReturn(indexed address,uint256)"
+                handler: handleWithdrawStakingReturn
+              - event: "WithdrawWrappedTokenPrize(indexed address,uint256)"
+                handler: handleWithdrawWrappedTokenPrize
+              - event: "WithdrawTotemPrize(indexed address,uint256)"
+                handler: handleWithdrawTotemPrize
+              - event: "Unstake(indexed address,uint256)"
+                handler: handleUnstake
+              - event: "PoolMatured()"
+                handler: handlePoolMatured
+              - event: "PoolLocked()"
+                handler: handlePoolLocked
+              - event: "PoolDeleted()"
+                handler: handlePoolDeleted
+              - event: "PoolDeactivated()"
+                handler: handlePoolDeactivated
+              - event: "PoolActivated()"
+                handler: handlePoolActivated
+          file: ./src/poolv7.ts

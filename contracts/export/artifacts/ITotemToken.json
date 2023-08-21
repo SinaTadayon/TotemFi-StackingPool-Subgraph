@@ -1,0 +1,291 @@
+{
+  "contractName": "ITotemToken",
+  "sourceName": "contracts/interfaces/ITotemToken.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "distributeTokens",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_CommunityDevelopmentAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_StakingRewardsAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_LiquidityPoolAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_PublicSaleAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_AdvisorsAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_SeedInvestmentAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_PrivateSaleAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_TeamAllocationAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_StrategicRoundAddr",
+          "type": "address"
+        }
+      ],
+      "name": "setDistributionTeamsAddresses",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_locker",
+          "type": "address"
+        }
+      ],
+      "name": "setLocker",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "status",
+          "type": "bool"
+        }
+      ],
+      "name": "setTaxExemptStatus",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "newTaxRate",
+          "type": "uint256"
+        }
+      ],
+      "name": "setTaxRate",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newTaxationWallet",
+          "type": "address"
+        }
+      ],
+      "name": "setTaxationWallet",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_msgSender",
+          "type": "address"
+        }
+      ],
+      "name": "taxExempt",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "taxRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "taxationWallet",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {},
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "evm": {
+    "bytecode": {
+      "generatedSources": [],
+      "linkReferences": {},
+      "object": "",
+      "opcodes": "",
+      "sourceMap": ""
+    },
+    "deployedBytecode": {
+      "generatedSources": [],
+      "immutableReferences": {},
+      "linkReferences": {},
+      "object": "",
+      "opcodes": "",
+      "sourceMap": ""
+    },
+    "gasEstimates": null,
+    "methodIdentifiers": {
+      "balanceOf(address)": "70a08231",
+      "distributeTokens()": "9ab1b484",
+      "setDistributionTeamsAddresses(address,address,address,address,address,address,address,address,address)": "a8d61e9c",
+      "setLocker(address)": "171060ec",
+      "setTaxExemptStatus(address,bool)": "c125c861",
+      "setTaxRate(uint256)": "c6d69a30",
+      "setTaxationWallet(address)": "28e2f997",
+      "taxExempt(address)": "d1ecfc68",
+      "taxRate()": "771a3a1d",
+      "taxationWallet()": "4a5db0a9",
+      "transfer(address,uint256)": "a9059cbb",
+      "transferFrom(address,address,uint256)": "23b872dd"
+    }
+  },
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"distributeTokens\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_CommunityDevelopmentAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_StakingRewardsAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_LiquidityPoolAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_PublicSaleAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_AdvisorsAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_SeedInvestmentAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_PrivateSaleAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_TeamAllocationAddr\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_StrategicRoundAddr\",\"type\":\"address\"}],\"name\":\"setDistributionTeamsAddresses\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_locker\",\"type\":\"address\"}],\"name\":\"setLocker\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"setTaxExemptStatus\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"newTaxRate\",\"type\":\"uint256\"}],\"name\":\"setTaxRate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newTaxationWallet\",\"type\":\"address\"}],\"name\":\"setTaxationWallet\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_msgSender\",\"type\":\"address\"}],\"name\":\"taxExempt\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"taxRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"taxationWallet\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/interfaces/ITotemToken.sol\":\"ITotemToken\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/interfaces/ITotemToken.sol\":{\"content\":\"// SPDX-License-Identifier: UNLICENSED\\npragma solidity ^0.8.0;\\n\\ninterface ITotemToken {\\n    \\n    function setLocker(address _locker) external;\\n\\n    function setDistributionTeamsAddresses(\\n        address _CommunityDevelopmentAddr,\\n        address _StakingRewardsAddr,\\n        address _LiquidityPoolAddr,\\n        address _PublicSaleAddr,\\n        address _AdvisorsAddr,\\n        address _SeedInvestmentAddr,\\n        address _PrivateSaleAddr,\\n        address _TeamAllocationAddr,\\n        address _StrategicRoundAddr\\n    ) external;\\n\\n    function distributeTokens() external;\\n\\n    function setTaxRate(uint256 newTaxRate) external;\\n\\n    function setTaxExemptStatus(address account, bool status) external;\\n\\n    function setTaxationWallet(address newTaxationWallet) external;\\n\\n\\n    function transfer(address recipient, uint256 amount)\\n        external\\n        returns (bool);\\n\\n    function transferFrom(\\n        address sender,\\n        address recipient,\\n        uint256 amount\\n    ) external returns (bool);\\n\\n    function taxRate() external returns (uint256);\\n\\n    function taxationWallet() external returns (address);\\n\\n    function taxExempt(address _msgSender) external returns (bool);\\n\\n    function balanceOf(address account) external view returns (uint256);\\n}\\n\",\"keccak256\":\"0x1ba963229ac039a0550990884eb976a06fb2fe7691848ff27af1c14574346531\",\"license\":\"UNLICENSED\"}},\"version\":1}",
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

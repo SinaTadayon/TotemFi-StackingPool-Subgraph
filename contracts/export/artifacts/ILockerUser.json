@@ -1,0 +1,77 @@
+{
+  "contractName": "ILockerUser",
+  "sourceName": "contracts/ILocker.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "locker",
+          "type": "address"
+        }
+      ],
+      "name": "SetLocker",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "locker",
+      "outputs": [
+        {
+          "internalType": "contract ILocker",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {},
+  "devdoc": {
+    "events": {
+      "SetLocker(address)": {
+        "details": "Emitted when setLocker is called."
+      }
+    },
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "evm": {
+    "bytecode": {
+      "generatedSources": [],
+      "linkReferences": {},
+      "object": "",
+      "opcodes": "",
+      "sourceMap": ""
+    },
+    "deployedBytecode": {
+      "generatedSources": [],
+      "immutableReferences": {},
+      "linkReferences": {},
+      "object": "",
+      "opcodes": "",
+      "sourceMap": ""
+    },
+    "gasEstimates": null,
+    "methodIdentifiers": {
+      "locker()": "d7b96d4e"
+    }
+  },
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"locker\",\"type\":\"address\"}],\"name\":\"SetLocker\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"locker\",\"outputs\":[{\"internalType\":\"contract ILocker\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"SetLocker(address)\":{\"details\":\"Emitted when setLocker is called.\"}},\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/ILocker.sol\":\"ILockerUser\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/ILocker.sol\":{\"content\":\"// SPDX-License-Identifier: UNLICENSED\\npragma solidity 0.7.6;\\n\\ninterface ILocker {\\n    /**\\n     * @dev Fails if transaction is not allowed.\\n     * Return values can be ignored for AntiBot launches\\n     */\\n    function lockOrGetPenalty(address source, address dest)\\n        external\\n        returns (bool, uint256);\\n}\\n\\ninterface ILockerUser {\\n    function locker() external view returns (ILocker);\\n\\n    /**\\n     * @dev Emitted when setLocker is called.\\n     */\\n    event SetLocker(address indexed locker);\\n}\\n\\n\",\"keccak256\":\"0x51a18df7a6b1708e8d614f547eb09dd79e64093413bb0081dbb8f0f411ce0e96\",\"license\":\"UNLICENSED\"}},\"version\":1}",
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

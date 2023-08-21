@@ -1,0 +1,41 @@
+version: '3'
+services:
+  graph-node:
+    image: graphprotocol/graph-node
+    ports:
+      - '8000:8000'
+      - '8001:8001'
+      - '8020:8020'
+      - '8030:8030'
+      - '8040:8040'
+    depends_on:
+      - ipfs
+      - postgres
+    environment:
+      postgres_host: postgres
+      postgres_user: graph_user
+      postgres_pass: graph_pass
+      postgres_db: graph_db
+      ipfs: 'ipfs:5001'
+      #for see bsc node urls, see this: https://docs.binance.org/smart-chain/developer/rpc.html
+      ethereum: 'chapel:https://data-seed-prebsc-1-s1.binance.org:8545/'
+      GRAPH_LOG: info
+
+  ipfs:
+    image: ipfs/go-ipfs:v0.4.23
+    ports:
+      - '5001:5001'
+    volumes:
+      - ../totem-subgraph-ipfs:/data/ipfs
+
+  postgres:
+    image: postgres
+    ports:
+      - '5432:5432'
+    command: ["postgres", "-cshared_preload_libraries=pg_stat_statements"]
+    environment:
+      POSTGRES_USER: graph_user
+      POSTGRES_PASSWORD: graph_pass
+      POSTGRES_DB: graph_db
+    volumes:
+      - ../totem-subgraph-postgres:/var/lib/postgresql/data

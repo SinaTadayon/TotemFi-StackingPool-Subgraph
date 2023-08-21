@@ -1,0 +1,61 @@
+
+specVersion: 0.0.2
+description: Totem Explorer
+repository: "https://github.com/totemfi/totem-subgraph"
+schema:
+    file: ./schema.graphql
+dataSources:
+    - kind: ethereum/contract
+      name: StakingPoolFactoryV3
+      network: mainnet
+      source:
+          address: StakingPoolFactoryV3
+          abi: StakingPoolFactoryV3
+          startBlock:
+      mapping:
+          kind: ethereum/events
+          apiVersion: 0.0.5
+          language: wasm/assemblyscript
+          entities:
+              - Summary
+              - StakingPool
+              - User
+          abis:
+              - name: StakingPoolFactoryV3
+                file:
+          eventHandlers:
+              - event: "PoolCreated(indexed address,string,uint256[10],uint256[8],uint256[8],bool)"
+                handler: handlePoolCreation
+          file: ./src/poolv2.ts
+templates:
+    - kind: ethereum/contract
+      name: StakingPool
+      network: mainnet
+      source:
+          abi: StakingPool
+      mapping:
+          kind: ethereum/events
+          apiVersion: 0.0.5
+          language: wasm/assemblyscript
+          entities:
+              - StakingPool
+              - User
+              - Stake
+              - Withdraw
+          abis:
+              - name: StakingPool
+                file:
+          eventHandlers:
+              - event: "Stake(indexed address,uint256,uint256)"
+                handler: handleStake
+              - event: "Withdraw(indexed address,uint256,uint256)"
+                handler: handleWithdraw
+              - event: "Unstake(indexed address,uint256)"
+                handler: handleUnstake
+              - event: "PoolMatured()"
+                handler: handlePoolMatured
+              - event: "PoolLocked()"
+                handler: handlePoolLocked
+              - event: "PoolDeleted()"
+                handler: handlePoolDeleted
+          file: ./src/poolv2.ts

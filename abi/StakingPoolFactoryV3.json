@@ -1,0 +1,387 @@
+[
+ {
+  "inputs": [
+   {
+    "internalType": "contract TotemToken",
+    "name": "_totemToken",
+    "type": "address"
+   },
+   {
+    "internalType": "contract RewardManager",
+    "name": "_rewardManager",
+    "type": "address"
+   },
+   {
+    "internalType": "address",
+    "name": "_oracleContract",
+    "type": "address"
+   },
+   {
+    "internalType": "address",
+    "name": "_swapRouter",
+    "type": "address"
+   },
+   {
+    "internalType": "address",
+    "name": "_usdToken",
+    "type": "address"
+   },
+   {
+    "internalType": "address",
+    "name": "_btcToken",
+    "type": "address"
+   }
+  ],
+  "stateMutability": "nonpayable",
+  "type": "constructor"
+ },
+ {
+  "anonymous": false,
+  "inputs": [
+   {
+    "indexed": true,
+    "internalType": "address",
+    "name": "pool",
+    "type": "address"
+   },
+   {
+    "indexed": false,
+    "internalType": "string",
+    "name": "poolType",
+    "type": "string"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint256",
+    "name": "maturityTime",
+    "type": "uint256"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint256",
+    "name": "lockTime",
+    "type": "uint256"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint256",
+    "name": "sizeAllocation",
+    "type": "uint256"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint256",
+    "name": "stakeApr",
+    "type": "uint256"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint256",
+    "name": "prizeAmount",
+    "type": "uint256"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint256",
+    "name": "usdPrizeAmount",
+    "type": "uint256"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint256",
+    "name": "potentialCollabReward",
+    "type": "uint256"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint256",
+    "name": "collaborativeRange",
+    "type": "uint256"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint256",
+    "name": "stakingPoolTaxRate",
+    "type": "uint256"
+   },
+   {
+    "indexed": false,
+    "internalType": "uint256",
+    "name": "minimumStakeAmount",
+    "type": "uint256"
+   },
+   {
+    "indexed": false,
+    "internalType": "bool",
+    "name": "isEnhancedEnabled",
+    "type": "bool"
+   }
+  ],
+  "name": "PoolCreated",
+  "type": "event"
+ },
+ {
+  "anonymous": false,
+  "inputs": [
+   {
+    "indexed": true,
+    "internalType": "address",
+    "name": "account",
+    "type": "address"
+   }
+  ],
+  "name": "PoolCreatorAdded",
+  "type": "event"
+ },
+ {
+  "anonymous": false,
+  "inputs": [
+   {
+    "indexed": true,
+    "internalType": "address",
+    "name": "account",
+    "type": "address"
+   }
+  ],
+  "name": "PoolCreatorRemoved",
+  "type": "event"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "account",
+    "type": "address"
+   }
+  ],
+  "name": "addPoolCreator",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "string",
+    "name": "_poolType",
+    "type": "string"
+   },
+   {
+    "internalType": "uint256",
+    "name": "maturityTime",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "lockTime",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "sizeAllocation",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "stakeApr",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "prizeAmount",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "usdPrizeAmount",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "potentialCollabReward",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "collaborativeRange",
+    "type": "uint256"
+   },
+   {
+    "internalType": "uint256",
+    "name": "burnRate",
+    "type": "uint256"
+   },
+   {
+    "internalType": "bool",
+    "name": "isEnhancedEnabled",
+    "type": "bool"
+   }
+  ],
+  "name": "create",
+  "outputs": [
+   {
+    "internalType": "address",
+    "name": "",
+    "type": "address"
+   }
+  ],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "account",
+    "type": "address"
+   }
+  ],
+  "name": "isPoolCreator",
+  "outputs": [
+   {
+    "internalType": "bool",
+    "name": "",
+    "type": "bool"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "minimumStakeAmount",
+  "outputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "oracleContract",
+  "outputs": [
+   {
+    "internalType": "address",
+    "name": "",
+    "type": "address"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "renouncePoolCreator",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "rewardManager",
+  "outputs": [
+   {
+    "internalType": "contract RewardManager",
+    "name": "",
+    "type": "address"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "newMinimumStakeAmount",
+    "type": "uint256"
+   }
+  ],
+  "name": "setMinimuntToStake",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "_oracleContract",
+    "type": "address"
+   }
+  ],
+  "name": "setOracleContract",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "address",
+    "name": "_swapRouter",
+    "type": "address"
+   }
+  ],
+  "name": "setSwapRouter",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [
+   {
+    "internalType": "uint256",
+    "name": "newStakingPoolTaxRate",
+    "type": "uint256"
+   }
+  ],
+  "name": "setTaxRate",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "stakingPoolTaxRate",
+  "outputs": [
+   {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "swapRouter",
+  "outputs": [
+   {
+    "internalType": "address",
+    "name": "",
+    "type": "address"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ },
+ {
+  "inputs": [],
+  "name": "totemToken",
+  "outputs": [
+   {
+    "internalType": "contract TotemToken",
+    "name": "",
+    "type": "address"
+   }
+  ],
+  "stateMutability": "view",
+  "type": "function"
+ }
+]

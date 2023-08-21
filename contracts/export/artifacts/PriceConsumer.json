@@ -1,0 +1,120 @@
+{
+  "contractName": "PriceConsumer",
+  "sourceName": "contracts/Price/PriceConsumer.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_oracle",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "getDecimals",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getLatestPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506040516102133803806102138339818101604052602081101561003357600080fd5b5051600080546001600160a01b039092166001600160a01b03199092169190911790556101ae806100656000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80638e15f4731461003b578063f0141d8414610055575b600080fd5b610043610073565b60408051918252519081900360200190f35b61005d610101565b6040805160ff9092168252519081900360200190f35b6000805460408051633fabe5a360e21b8152905183926001600160a01b03169163feaf968c9160048083019260a0929190829003018186803b1580156100b857600080fd5b505afa1580156100cc573d6000803e3d6000fd5b505050506040513d60a08110156100e257600080fd5b5060200151905060008112156100f95760006100fb565b805b91505090565b600080546040805163313ce56760e01b8152905183926001600160a01b03169163313ce567916004808301926020929190829003018186803b15801561014657600080fd5b505afa15801561015a573d6000803e3d6000fd5b505050506040513d602081101561017057600080fd5b50519150509056fea2646970667358221220e31f3014cdf8590c585e333134497eb6bb74601ce5bf45a593b8a0693d8c535464736f6c63430007060033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80638e15f4731461003b578063f0141d8414610055575b600080fd5b610043610073565b60408051918252519081900360200190f35b61005d610101565b6040805160ff9092168252519081900360200190f35b6000805460408051633fabe5a360e21b8152905183926001600160a01b03169163feaf968c9160048083019260a0929190829003018186803b1580156100b857600080fd5b505afa1580156100cc573d6000803e3d6000fd5b505050506040513d60a08110156100e257600080fd5b5060200151905060008112156100f95760006100fb565b805b91505090565b600080546040805163313ce56760e01b8152905183926001600160a01b03169163313ce567916004808301926020929190829003018186803b15801561014657600080fd5b505afa15801561015a573d6000803e3d6000fd5b505050506040513d602081101561017057600080fd5b50519150509056fea2646970667358221220e31f3014cdf8590c585e333134497eb6bb74601ce5bf45a593b8a0693d8c535464736f6c63430007060033",
+  "linkReferences": {},
+  "deployedLinkReferences": {},
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "constructor": {
+        "params": {
+          "_oracle": "The chainlink node oracle address to send requests"
+        }
+      }
+    },
+    "version": 1
+  },
+  "evm": {
+    "bytecode": {
+      "generatedSources": [],
+      "linkReferences": {},
+      "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x40 MLOAD PUSH2 0x213 CODESIZE SUB DUP1 PUSH2 0x213 DUP4 CODECOPY DUP2 DUP2 ADD PUSH1 0x40 MSTORE PUSH1 0x20 DUP2 LT ISZERO PUSH2 0x33 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP MLOAD PUSH1 0x0 DUP1 SLOAD PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB SWAP1 SWAP3 AND PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB NOT SWAP1 SWAP3 AND SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE PUSH2 0x1AE DUP1 PUSH2 0x65 PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH2 0x36 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x8E15F473 EQ PUSH2 0x3B JUMPI DUP1 PUSH4 0xF0141D84 EQ PUSH2 0x55 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x43 PUSH2 0x73 JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH2 0x5D PUSH2 0x101 JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD PUSH1 0xFF SWAP1 SWAP3 AND DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH1 0x0 DUP1 SLOAD PUSH1 0x40 DUP1 MLOAD PUSH4 0x3FABE5A3 PUSH1 0xE2 SHL DUP2 MSTORE SWAP1 MLOAD DUP4 SWAP3 PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND SWAP2 PUSH4 0xFEAF968C SWAP2 PUSH1 0x4 DUP1 DUP4 ADD SWAP3 PUSH1 0xA0 SWAP3 SWAP2 SWAP1 DUP3 SWAP1 SUB ADD DUP2 DUP7 DUP1 EXTCODESIZE ISZERO DUP1 ISZERO PUSH2 0xB8 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP GAS STATICCALL ISZERO DUP1 ISZERO PUSH2 0xCC JUMPI RETURNDATASIZE PUSH1 0x0 DUP1 RETURNDATACOPY RETURNDATASIZE PUSH1 0x0 REVERT JUMPDEST POP POP POP POP PUSH1 0x40 MLOAD RETURNDATASIZE PUSH1 0xA0 DUP2 LT ISZERO PUSH2 0xE2 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x20 ADD MLOAD SWAP1 POP PUSH1 0x0 DUP2 SLT ISZERO PUSH2 0xF9 JUMPI PUSH1 0x0 PUSH2 0xFB JUMP JUMPDEST DUP1 JUMPDEST SWAP2 POP POP SWAP1 JUMP JUMPDEST PUSH1 0x0 DUP1 SLOAD PUSH1 0x40 DUP1 MLOAD PUSH4 0x313CE567 PUSH1 0xE0 SHL DUP2 MSTORE SWAP1 MLOAD DUP4 SWAP3 PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND SWAP2 PUSH4 0x313CE567 SWAP2 PUSH1 0x4 DUP1 DUP4 ADD SWAP3 PUSH1 0x20 SWAP3 SWAP2 SWAP1 DUP3 SWAP1 SUB ADD DUP2 DUP7 DUP1 EXTCODESIZE ISZERO DUP1 ISZERO PUSH2 0x146 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP GAS STATICCALL ISZERO DUP1 ISZERO PUSH2 0x15A JUMPI RETURNDATASIZE PUSH1 0x0 DUP1 RETURNDATACOPY RETURNDATASIZE PUSH1 0x0 REVERT JUMPDEST POP POP POP POP PUSH1 0x40 MLOAD RETURNDATASIZE PUSH1 0x20 DUP2 LT ISZERO PUSH2 0x170 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP MLOAD SWAP2 POP POP SWAP1 JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xE3 0x1F ADDRESS EQ 0xCD 0xF8 MSIZE 0xC PC 0x5E CALLER BALANCE CALLVALUE 0x49 PUSH31 0xB6BB74601CE5BF45A593B8A0693D8C535464736F6C63430007060033000000 ",
+      "sourceMap": "141:1120:11:-:0;;;306:221;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;306:221:11;478:9;:42;;-1:-1:-1;;;;;478:42:11;;;-1:-1:-1;;;;;;478:42:11;;;;;;;;;141:1120;;;;;;"
+    },
+    "deployedBytecode": {
+      "generatedSources": [],
+      "immutableReferences": {},
+      "linkReferences": {},
+      "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH2 0x36 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x8E15F473 EQ PUSH2 0x3B JUMPI DUP1 PUSH4 0xF0141D84 EQ PUSH2 0x55 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x43 PUSH2 0x73 JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH2 0x5D PUSH2 0x101 JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD PUSH1 0xFF SWAP1 SWAP3 AND DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH1 0x0 DUP1 SLOAD PUSH1 0x40 DUP1 MLOAD PUSH4 0x3FABE5A3 PUSH1 0xE2 SHL DUP2 MSTORE SWAP1 MLOAD DUP4 SWAP3 PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND SWAP2 PUSH4 0xFEAF968C SWAP2 PUSH1 0x4 DUP1 DUP4 ADD SWAP3 PUSH1 0xA0 SWAP3 SWAP2 SWAP1 DUP3 SWAP1 SUB ADD DUP2 DUP7 DUP1 EXTCODESIZE ISZERO DUP1 ISZERO PUSH2 0xB8 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP GAS STATICCALL ISZERO DUP1 ISZERO PUSH2 0xCC JUMPI RETURNDATASIZE PUSH1 0x0 DUP1 RETURNDATACOPY RETURNDATASIZE PUSH1 0x0 REVERT JUMPDEST POP POP POP POP PUSH1 0x40 MLOAD RETURNDATASIZE PUSH1 0xA0 DUP2 LT ISZERO PUSH2 0xE2 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x20 ADD MLOAD SWAP1 POP PUSH1 0x0 DUP2 SLT ISZERO PUSH2 0xF9 JUMPI PUSH1 0x0 PUSH2 0xFB JUMP JUMPDEST DUP1 JUMPDEST SWAP2 POP POP SWAP1 JUMP JUMPDEST PUSH1 0x0 DUP1 SLOAD PUSH1 0x40 DUP1 MLOAD PUSH4 0x313CE567 PUSH1 0xE0 SHL DUP2 MSTORE SWAP1 MLOAD DUP4 SWAP3 PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND SWAP2 PUSH4 0x313CE567 SWAP2 PUSH1 0x4 DUP1 DUP4 ADD SWAP3 PUSH1 0x20 SWAP3 SWAP2 SWAP1 DUP3 SWAP1 SUB ADD DUP2 DUP7 DUP1 EXTCODESIZE ISZERO DUP1 ISZERO PUSH2 0x146 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP GAS STATICCALL ISZERO DUP1 ISZERO PUSH2 0x15A JUMPI RETURNDATASIZE PUSH1 0x0 DUP1 RETURNDATACOPY RETURNDATASIZE PUSH1 0x0 REVERT JUMPDEST POP POP POP POP PUSH1 0x40 MLOAD RETURNDATASIZE PUSH1 0x20 DUP2 LT ISZERO PUSH2 0x170 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP MLOAD SWAP2 POP POP SWAP1 JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xE3 0x1F ADDRESS EQ 0xCD 0xF8 MSIZE 0xC PC 0x5E CALLER BALANCE CALLVALUE 0x49 PUSH31 0xB6BB74601CE5BF45A593B8A0693D8C535464736F6C63430007060033000000 ",
+      "sourceMap": "141:1120:11:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;800:174;;;:::i;:::-;;;;;;;;;;;;;;;;593:132;;;:::i;:::-;;;;;;;;;;;;;;;;;;;800:174;847:7;891:9;;:27;;;-1:-1:-1;;;891:27:11;;;;847:7;;-1:-1:-1;;;;;891:9:11;;:25;;:27;;;;;;;;;;;;;;:9;:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;891:27:11;;;;-1:-1:-1;945:1:11;936:10;;;:31;;966:1;936:31;;;957:5;936:31;929:38;;;800:174;:::o;593:132::-;639:5;673:9;;:20;;;-1:-1:-1;;;673:20:11;;;;639:5;;-1:-1:-1;;;;;673:9:11;;:18;;:20;;;;;;;;;;;;;;:9;:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;673:20:11;;-1:-1:-1;;593:132:11;:::o"
+    },
+    "gasEstimates": {
+      "creation": {
+        "codeDepositCost": "86000",
+        "executionCost": "infinite",
+        "totalCost": "infinite"
+      },
+      "external": {
+        "getDecimals()": "infinite",
+        "getLatestPrice()": "infinite"
+      }
+    },
+    "methodIdentifiers": {
+      "getDecimals()": "f0141d84",
+      "getLatestPrice()": "8e15f473"
+    }
+  },
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_oracle\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"getDecimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLatestPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"_oracle\":\"The chainlink node oracle address to send requests\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"getDecimals()\":{\"notice\":\"Returns decimals for oracle contract\"},\"getLatestPrice()\":{\"notice\":\"Returns the latest price from oracle contract\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Price/PriceConsumer.sol\":\"PriceConsumer\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@chainlink/contracts/src/v0.7/interfaces/AggregatorV3Interface.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.7.0;\\n\\ninterface AggregatorV3Interface {\\n\\n  function decimals()\\n    external\\n    view\\n    returns (\\n      uint8\\n    );\\n\\n  function description()\\n    external\\n    view\\n    returns (\\n      string memory\\n    );\\n\\n  function version()\\n    external\\n    view\\n    returns (\\n      uint256\\n    );\\n\\n  // getRoundData and latestRoundData should both raise \\\"No data present\\\"\\n  // if they do not have data to report, instead of returning unset values\\n  // which could be misinterpreted as actual reported values.\\n  function getRoundData(\\n    uint80 _roundId\\n  )\\n    external\\n    view\\n    returns (\\n      uint80 roundId,\\n      int256 answer,\\n      uint256 startedAt,\\n      uint256 updatedAt,\\n      uint80 answeredInRound\\n    );\\n\\n  function latestRoundData()\\n    external\\n    view\\n    returns (\\n      uint80 roundId,\\n      int256 answer,\\n      uint256 startedAt,\\n      uint256 updatedAt,\\n      uint80 answeredInRound\\n    );\\n\\n}\\n\",\"keccak256\":\"0x62c8752bb170233359e653c61d491d6a79fe1d7d7281377c5ac4e9c03ce811ea\",\"license\":\"MIT\"},\"contracts/Price/PriceConsumer.sol\":{\"content\":\"// SPDX-License-Identifier: UNLICENSED\\npragma solidity 0.7.6;\\n\\nimport \\\"@chainlink/contracts/src/v0.7/interfaces/AggregatorV3Interface.sol\\\";\\n\\ncontract PriceConsumer {\\n    AggregatorV3Interface internal priceFeed;\\n\\n    /**\\n     * @param _oracle The chainlink node oracle address to send requests\\n     */\\n    constructor(address _oracle) {\\n        // commented for updatingMaturingPrice function in staking pool to work correctly\\n        // require(_oracle != address(0));\\n        priceFeed = AggregatorV3Interface(_oracle);\\n    }\\n\\n    /**\\n     * Returns decimals for oracle contract\\n     */\\n    function getDecimals() external view returns (uint8) {\\n        uint8 decimals = priceFeed.decimals();\\n        return decimals;\\n    }\\n\\n    /**\\n     * Returns the latest price from oracle contract\\n     */\\n    function getLatestPrice() public view returns (uint256) {\\n        (, int256 price, , , ) = priceFeed.latestRoundData();\\n\\n        return price >= 0 ? uint256(price) : 0;\\n    }\\n\\n    // TODO: a function must be added to get the price on a specific timestamp\\n    // at the moment chainlink provide a function to get the price on a round ID\\n    // but all round IDs don't return a valid price and mapping the round IDs to\\n    // timestamps is not very well defined\\n}\\n\",\"keccak256\":\"0xd7ac173689dd7d69503b0708dad3ef2122e3f1f0eaaead1f7ceb2283fa887d0c\",\"license\":\"UNLICENSED\"}},\"version\":1}",
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 1873,
+        "contract": "contracts/Price/PriceConsumer.sol:PriceConsumer",
+        "label": "priceFeed",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_contract(AggregatorV3Interface)45"
+      }
+    ],
+    "types": {
+      "t_contract(AggregatorV3Interface)45": {
+        "encoding": "inplace",
+        "label": "contract AggregatorV3Interface",
+        "numberOfBytes": "20"
+      }
+    }
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "getDecimals()": {
+        "notice": "Returns decimals for oracle contract"
+      },
+      "getLatestPrice()": {
+        "notice": "Returns the latest price from oracle contract"
+      }
+    },
+    "version": 1
+  }
+}

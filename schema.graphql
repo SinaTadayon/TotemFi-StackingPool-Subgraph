@@ -1,0 +1,69 @@
+type Summary @entity {
+    id: ID!
+    totalPools: Int!
+    totalStaked: BigInt!
+}
+
+type User @entity {
+    id: ID!
+    totalStaked: BigInt!
+}
+
+type StakingPool @entity {
+    id: ID!
+    poolType: String
+    totalStakes: Int!
+    totalStaked: BigInt!
+    totalUnStakes: BigInt
+    totalUnStaked: BigInt
+    totalWithdraws: BigInt
+    totalWithdrawed: BigInt
+    totalWithdrawedBtc: BigInt
+    totalWithdrawedToken: BigInt
+    startDate: BigInt!
+    lockTime: BigInt
+    launchDate: BigInt
+    maturityTime: BigInt
+    sizeAllocation: BigInt
+    stakeApr: BigInt
+    prizeAmount: BigInt
+    usdPrizeAmount: BigInt
+    stakingPoolTaxRate: BigInt
+    burnRate: BigInt!
+    potentialCollabReward: BigInt
+    collaborativeRange: BigInt
+    minimumStakeAmount: BigInt
+    variables: [BigInt!]
+    ranks: [BigInt!]
+    percentages: [BigInt!]
+    isEnhancedEnabled: Boolean!
+    isLocked: Boolean!
+    isMatured: Boolean!
+    isDeleted: Boolean!
+}
+
+type Stake @entity {
+    id: ID!
+    pool: StakingPool!
+    user: User!
+    value: BigInt!
+    pricePrediction: BigInt!
+    timestamp: BigInt!
+}
+
+type Withdraw @entity {
+    id: ID!
+    pool: StakingPool!
+    user: User!
+    value: BigInt!
+    btcValue: BigInt
+    timestamp: BigInt!
+}
+
+type Unstake @entity {
+    id: ID!
+    pool: StakingPool!
+    user: User!
+    value: BigInt!
+    timestamp: BigInt!
+}

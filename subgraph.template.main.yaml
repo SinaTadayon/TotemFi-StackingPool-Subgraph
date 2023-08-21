@@ -1,0 +1,165 @@
+specVersion: 0.0.2
+description: Totem Explorer
+repository: "https://github.com/totemfi/totem-subgraph"
+schema:
+    file: ./schema.graphql
+dataSources:
+    - kind: ethereum/contract
+      name: StakingPoolFactoryV6
+      network: mainnet
+      source:
+          address: StakingPoolFactoryV6
+          abi: StakingPoolFactoryV6
+          startBlock:
+      mapping:
+          kind: ethereum/events
+          apiVersion: 0.0.5
+          language: wasm/assemblyscript
+          entities:
+              - Summary
+              - StakingPool
+              - User
+          abis:
+              - name: StakingPoolFactoryV6
+                file:
+          eventHandlers:
+              - event: "PoolCreated(indexed address,string,string,uint256[11],uint256[8],uint256[8],bool)"
+                handler: handlePoolCreation
+          file: ./src/poolv5.ts
+    - kind: ethereum/contract
+      name: StakingPoolFactoryV4
+      network: mainnet
+      source:
+          address: StakingPoolFactoryV4
+          abi: StakingPoolFactoryV4
+          startBlock:
+      mapping:
+          kind: ethereum/events
+          apiVersion: 0.0.5
+          language: wasm/assemblyscript
+          entities:
+              - Summary
+              - StakingPool
+              - User
+          abis:
+              - name: StakingPoolFactoryV4
+                file:
+          eventHandlers:
+              - event: "PoolCreated(indexed address,string,uint256[10],uint256[8],uint256[8],bool)"
+                handler: handlePoolCreation
+          file: ./src/poolv3.ts
+    - kind: ethereum/contract
+      name: StakingPoolFactoryV3
+      network: mainnet
+      source:
+          address: StakingPoolFactoryV3
+          abi: StakingPoolFactoryV3
+          startBlock:
+      mapping:
+          kind: ethereum/events
+          apiVersion: 0.0.5
+          language: wasm/assemblyscript
+          entities:
+              - Summary
+              - StakingPool
+              - User
+          abis:
+              - name: StakingPoolFactoryV3
+                file:
+          eventHandlers:
+              - event: "PoolCreated(indexed address,string,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,bool)"
+                handler: handlePoolCreation
+          file: ./src/poolv2.ts
+    - kind: ethereum/contract
+      name: StakingPoolFactoryV1
+      network: mainnet
+      source:
+          address: StakingPoolFactoryV1
+          abi: StakingPoolFactoryV1
+          startBlock:
+      mapping:
+          kind: ethereum/events
+          apiVersion: 0.0.5
+          language: wasm/assemblyscript
+          entities:
+              - Summary
+              - StakingPool
+              - User
+          abis:
+              - name: StakingPoolFactoryV1
+                file: ./abi/StakingPoolFactoryV1.json
+          eventHandlers:
+              - event: "PoolCreated(indexed address,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,bool)"
+                handler: handlePoolCreation
+          file: ./src/poolv1.ts
+templates:
+    - kind: ethereum/contract
+      name: StakingPoolV6
+      network: mainnet
+      source:
+          abi: StakingPoolV6
+      mapping:
+          kind: ethereum/events
+          apiVersion: 0.0.5
+          language: wasm/assemblyscript
+          entities:
+              - StakingPool
+              - User
+              - Stake
+              - Withdraw
+          abis:
+              - name: StakingPoolV6
+                file:
+          eventHandlers:
+              - event: "Stake(indexed address,uint256,uint256)"
+                handler: handleStake
+              - event: "WithdrawStakingReturn(indexed address,uint256)"
+                handler: handleWithdrawStakingReturn
+              - event: "WithdrawWrappedTokenPrize(indexed address,uint256)"
+                handler: handleWithdrawWrappedTokenPrize
+              - event: "WithdrawTotemPrize(indexed address,uint256)"
+                handler: handleWithdrawTotemPrize
+              - event: "Unstake(indexed address,uint256)"
+                handler: handleUnstake
+              - event: "PoolMatured()"
+                handler: handlePoolMatured
+              - event: "PoolLocked()"
+                handler: handlePoolLocked
+              - event: "PoolDeleted()"
+                handler: handlePoolDeleted
+              - event: "PoolDeactivated()"
+                handler: handlePoolDeactivated
+              - event: "PoolActivated()"
+                handler: handlePoolActivated
+          file: ./src/poolv5.ts
+    - kind: ethereum/contract
+      name: StakingPool
+      network: mainnet
+      source:
+          abi: StakingPool
+      mapping:
+          kind: ethereum/events
+          apiVersion: 0.0.5
+          language: wasm/assemblyscript
+          entities:
+              - StakingPool
+              - User
+              - Stake
+              - Withdraw
+          abis:
+              - name: StakingPool
+                file:
+          eventHandlers:
+              - event: "Stake(indexed address,uint256,uint256)"
+                handler: handleStake
+              - event: "Withdraw(indexed address,uint256,uint256)"
+                handler: handleWithdraw
+              - event: "Unstake(indexed address,uint256)"
+                handler: handleUnstake
+              - event: "PoolMatured()"
+                handler: handlePoolMatured
+              - event: "PoolLocked()"
+                handler: handlePoolLocked
+              - event: "PoolDeleted()"
+                handler: handlePoolDeleted
+          file: ./src/poolv1.ts
